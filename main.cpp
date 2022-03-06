@@ -17,7 +17,7 @@ int main()
       cin>>y;
     }
     system("cls");
-    cout<<"Before Sorting\n";
+    cout<<"Before Sorting\n";//Displays the results before sorting.
     for(int i = 0; i <= n - 1; i++) {
       cout<<num[i]<<" ";
     }
@@ -26,10 +26,11 @@ int main()
     I make i to be less than or equal to (n - 2)
     in order to keep swap routine from going outside
     the range of the array.
-    */
-    bool flag = 0;
-    while(flag == 0) {
-        flag = 1;
+    */ // I mean line 35
+    /* Formula for Bubble sort */ // Thus line 31 to 45.
+    bool flag = 1; //The flag is to check whether swapping of numbers have taken place or not,flag initially set to 1 means swapping has taken place.
+    while(flag == 1) { //This condition is telling the computer to loop through the array again so far as swapping takes place inside the loop.
+        flag = 0;//Initially reset flag to 0 inside the loop means swapping has not take place yet.
         int i = 0;
         while(i <= n - 2) {
             double temp;
@@ -37,12 +38,12 @@ int main()
               temp = num[i];
               num[i] = num[i+1];
               num[i+1] = temp;
-              flag = 0;
+              flag = 1;//flag is set to 1 if swap takes place inside the loop
             }
             i++;
         }
     }
-    cout<<"After Sorting\n";
+    cout<<"After Sorting\n"; //Displays results after sorting
     for(int i = 0; i <= n-1; i++) {
       cout<<num[i]<<" ";
     }
